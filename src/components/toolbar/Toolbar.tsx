@@ -8,6 +8,7 @@ import ToolItem from "./ToolItem";
 import ToolValues from "./ToolValues";
 import useNotetaking from "@/hooks/useNotetaking";
 import { saveAs } from "file-saver";
+import { useRouter } from "next/navigation";
 
 
 const tools = [
@@ -20,6 +21,7 @@ const tools = [
 const Toolbar = () => {
     // notetaking hook
     const { content, setContent } = useNotetaking()
+    const router = useRouter()
 
     // save content handler
     const handleContentSave = () => {
@@ -49,12 +51,13 @@ const Toolbar = () => {
         <div className="box-border bg-background-toolbar drop-shadow-ds-001 flex gap-4 justify-between items-center 
         text-white p-1 px-4 h-14 lg:h-10 w-full z-50"
         >
-            <div className="box-border hidden lg:flex gap-2 justify-center items-center h-full w-fit">
+            <button className="box-border hidden lg:flex gap-2 justify-center items-center h-full w-fit cursor-pointer" 
+            onClick={() => router.refresh()}>
                 <GiThorHammer className="h-[70%] w-fit" />
-                <label className="uppercase font-bold text-[16px]">
+                <span className="uppercase font-bold text-[16px]">
                     Thorpad
-                </label>
-            </div>
+                </span>
+            </button>
             <div className="box-border flex gap-2 justify-center items-center h-full w-full md:w-fit">
                 {tools.map(({ id, name, icon }) => (
                     <ToolItem key={id} id={id} name={name} icon={icon} onClick={handleTools} />
