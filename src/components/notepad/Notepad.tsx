@@ -1,7 +1,7 @@
 'use client'
 
 import useNotetaking from "@/hooks/useNotetaking";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
 
 
 const Notepad = () => {
@@ -12,6 +12,12 @@ const Notepad = () => {
     const handleOnChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
         setContent(event.target.value)
     }
+
+    useEffect(() => {
+        if(content) {
+            localStorage.setItem('thorpadData', content)
+        }
+    }, [content])
 
     return (
         <div className="relative box-border bg-background-notepad drop-shadow-ds-001 rounded-notepad 
