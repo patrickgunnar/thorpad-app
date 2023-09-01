@@ -10,7 +10,7 @@ interface NotetakingStore {
 
 const useNotetaking = create<NotetakingStore>((set) => ({
     content: '',
-    setContent: (content: string) => set({ content })
+    setContent: (content: string) => set({ content: content.trim() })
 }))
 
 export default useNotetaking
