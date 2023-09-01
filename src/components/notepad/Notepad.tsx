@@ -1,23 +1,26 @@
 'use client'
 
 import useNotetaking from "@/hooks/useNotetaking";
-import { ChangeEvent, useEffect } from "react";
+import { ChangeEvent } from "react";
+import debounce from "lodash.debounce";
 
 
 const Notepad = () => {
     // notetaking hook
     const { content, setContent } = useNotetaking()
 
+    // debounce handler
+    const handleDebounce = debounce((newContent) => {
+        localStorage.setItem('thorpadData', newContent)
+    }, 2000)
+
     // textarea on change handler
     const handleOnChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-        setContent(event.target.value)
-    }
+        const newContent = event.target.value
 
-    useEffect(() => {
-        if(content) {
-            localStorage.setItem('thorpadData', content)
-        }
-    }, [content])
+        setContent(newContent)
+        handleDebounce(newContent)
+    }
 
     return (
         <div className="relative box-border bg-background-notepad drop-shadow-ds-001 rounded-notepad 
