@@ -4,15 +4,15 @@ import { create } from "zustand";
 
 
 interface SelectionStore {
-    selectionStart: number | null
-    selectionEnd: number | null
-    setSelection: (start: number | null, end: number | null) => void
+    selectionStart: number
+    selectionEnd: number
+    setSelection: (start: number, end: number) => void
 }
 
 const useSelection = create<SelectionStore>((set) => ({
-    selectionStart: null,
-    selectionEnd: null,
-    setSelection: (start: number | null, end: number | null) => set({ selectionStart: start, selectionEnd: end })
+    selectionStart: 0,
+    selectionEnd: 0,
+    setSelection: (start: number, end: number) => set({ selectionStart: start, selectionEnd: end })
 }))
 
 export default useSelection
