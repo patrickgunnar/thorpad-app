@@ -11,7 +11,7 @@ import {
 import { GiThorHammer } from "react-icons/gi";
 import ToolItem from "./ToolItem";
 import ToolValues from "./ToolValues";
-import { useState } from "react";
+import useNotetaking from "@/hooks/useNotetaking";
 
 const tools = [
     { name: "Clear", icon: BiSolidEraser, id: "clear-tool" },
@@ -23,14 +23,17 @@ const tools = [
 ];
 
 const Toolbar = () => {
-    // words and chars states
-    const [words, setWords] = useState<number>(45);
-    const [chars, setChars] = useState<number>(254);
+    // notetaking hook
+    const { content } = useNotetaking()
 
     // tools handlers
     const handleTools = (id: string) => {
         console.log(id);
     }
+
+    // current words and chars values
+    const words = content.split(/\s+/).filter(word => word.trim() !== '').length
+    const chars = content.length
 
     return (
         <div className="box-border bg-background-toolbar drop-shadow-ds-001 flex gap-4 justify-center items-center 
