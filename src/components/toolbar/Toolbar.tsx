@@ -37,12 +37,12 @@ const Toolbar = () => {
                     Thorpad
                 </label>
             </div>
-            <div className="box-border flex gap-2 justify-center items-center h-full w-fit">
+            <div className="box-border flex gap-2 justify-center items-center h-full w-full md:w-fit">
                 {tools.map(({ id, name, icon }) => (
                     <ToolItem key={id} id={id} name={name} icon={icon} onClick={handleTools} />
                 ))}
             </div>
-            <div className="box-border flex gap-2 justify-center items-center h-full w-fit">
+            <div className="box-border hidden md:flex gap-2 justify-center items-center h-full w-fit">
                 <ToolValues words={words} chars={chars} />
             </div>
         </div>
