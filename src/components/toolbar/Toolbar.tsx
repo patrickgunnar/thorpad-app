@@ -7,6 +7,8 @@ import { GiThorHammer } from "react-icons/gi";
 import ToolItem from "./ToolItem";
 import ToolValues from "./ToolValues";
 import useNotetaking from "@/hooks/useNotetaking";
+import { saveAs } from "file-saver";
+
 
 const tools = [
     { name: "Clear", icon: BiSolidEraser, id: "clear-tool" },
@@ -18,9 +20,17 @@ const Toolbar = () => {
     // notetaking hook
     const { content } = useNotetaking()
 
+    // save content handler
+    const handleContentSave = () => {
+        const blob = new Blob([content], { type: "text/plain" })
+
+        saveAs(blob, "yourFile.txt")
+    }
+
     // tools handlers
     const handleTools = (id: string) => {
         console.log(id)
+        if(id === "save-tool") handleContentSave()
     }
 
     // current words and chars values
