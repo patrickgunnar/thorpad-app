@@ -18,7 +18,7 @@ const tools = [
 
 const Toolbar = () => {
     // notetaking hook
-    const { content } = useNotetaking()
+    const { content, setContent } = useNotetaking()
 
     // save content handler
     const handleContentSave = () => {
@@ -27,10 +27,16 @@ const Toolbar = () => {
         saveAs(blob, "yourFile.txt")
     }
 
+    // clear content handler
+    const handleContentClear = () => {
+        setContent('')
+    }
+
     // tools handlers
     const handleTools = (id: string) => {
         console.log(id)
         if(id === "save-tool") handleContentSave()
+        else if(id === "clear-tool") handleContentClear()
     }
 
     // current words and chars values
