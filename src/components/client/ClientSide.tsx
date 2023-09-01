@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Notepad from "../notepad/Notepad";
 import Toolbar from "../toolbar/Toolbar";
-import Cookies from "js-cookie";
 import useNotetaking from "@/hooks/useNotetaking";
 
 
