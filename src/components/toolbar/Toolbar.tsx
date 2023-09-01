@@ -31,6 +31,7 @@ const Toolbar = () => {
     // clear content handler
     const handleContentClear = () => {
         setContent('')
+        localStorage.removeItem('thorpadData')
     }
 
     // tools handlers
