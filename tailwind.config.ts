@@ -24,7 +24,8 @@ const config: Config = {
 				"ds-001": "-1px 2px 3px var(--colour--004)",
 			},
 			borderRadius: {
-				"notepad": "12px"
+				"notepad": "12px",
+                "tools-radius": "4px"
 			}
         },
     },
