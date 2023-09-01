@@ -8,7 +8,10 @@ import {
     BiSolidSave,
     BiUnderline,
 } from "react-icons/bi";
+import { GiThorHammer } from "react-icons/gi";
 import ToolItem from "./ToolItem";
+import ToolValues from "./ToolValues";
+import { useState } from "react";
 
 const tools = [
     { name: "Clear", icon: BiSolidEraser, id: "clear-tool" },
@@ -20,6 +23,10 @@ const tools = [
 ];
 
 const Toolbar = () => {
+    // words and chars states
+    const [words, setWords] = useState<number>(45);
+    const [chars, setChars] = useState<number>(254);
+
     // tools handlers
     const handleTools = (id: string) => {
         console.log(id);
@@ -30,8 +37,10 @@ const Toolbar = () => {
         text-white p-1 h-14 lg:h-10 w-full z-50"
         >
             <div className="box-border hidden lg:flex gap-2 justify-center items-center px-8 h-full w-fit">
-                <div>Logo</div>
-                <label>Thorpad</label>
+                <GiThorHammer className="h-[70%] w-fit" />
+                <label className="uppercase font-bold text-[16px]">
+                    Thorpad
+                </label>
             </div>
             <div className="box-border flex gap-2 justify-center items-center md:px-10 h-full w-full md:w-fit">
                 {tools.map(({ id, name, icon }) => (
@@ -39,8 +48,7 @@ const Toolbar = () => {
                 ))}
             </div>
             <div className="box-border hidden md:flex gap-2 justify-center items-center px-8 h-full w-fit">
-                <div>Chars</div>
-                <div>Words</div>
+                <ToolValues words={words} chars={chars} />
             </div>
         </div>
     );
