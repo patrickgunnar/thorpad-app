@@ -1,7 +1,7 @@
 "use client";
 
 import {
-    BiSolidEraser, BiSolidFolderOpen, BiSolidSave
+    BiSolidEraser, BiSolidFolderOpen, BiSolidSave, BiSolidInfoSquare
 } from "react-icons/bi";
 import { GiThorHammer } from "react-icons/gi";
 import ToolItem from "./ToolItem";
@@ -14,6 +14,7 @@ const tools = [
     { name: "Clear", icon: BiSolidEraser, id: "clear-tool" },
     { name: "Open", icon: BiSolidFolderOpen, id: "open-tool" },
     { name: "Save", icon: BiSolidSave, id: "save-tool" },
+    { name: "About", icon: BiSolidInfoSquare, id: "about-tool" }
 ];
 
 const Toolbar = () => {
