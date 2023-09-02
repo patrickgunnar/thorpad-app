@@ -6,6 +6,7 @@ import Toolbar from "../toolbar/Toolbar";
 import useNotetaking from "@/hooks/useNotetaking";
 import InputModal from "../modal/InputModal";
 import AboutModal from "../modal/AboutModal";
+import { Toaster } from "react-hot-toast";
 
 
 const ClientSide = () => {
@@ -27,6 +28,7 @@ const ClientSide = () => {
             <Notepad />
             <InputModal />
             <AboutModal />
+            <Toaster />
         </main>
     );
 }
