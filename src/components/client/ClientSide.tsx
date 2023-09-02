@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Notepad from "../notepad/Notepad";
 import Toolbar from "../toolbar/Toolbar";
 import useNotetaking from "@/hooks/useNotetaking";
+import InputModal from "../modal/InputModal";
+import AboutModal from "../modal/AboutModal";
 
 
 const ClientSide = () => {
@@ -23,6 +25,8 @@ const ClientSide = () => {
         <main className="flex flex-col justify-start items-center box-border h-full w-full">
             <Toolbar />
             <Notepad />
+            <InputModal />
+            <AboutModal />
         </main>
     );
 }
