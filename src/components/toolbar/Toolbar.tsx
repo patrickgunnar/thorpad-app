@@ -9,6 +9,8 @@ import ToolValues from "./ToolValues";
 import useNotetaking from "@/hooks/useNotetaking";
 import { saveAs } from "file-saver";
 import { useRouter } from "next/navigation";
+import useInputModal from "@/hooks/useInputModal";
+import useAboutModal from "@/hooks/useAboutModal";
 
 
 const tools = [
@@ -21,6 +23,9 @@ const tools = [
 const Toolbar = () => {
     // notetaking hook
     const { content, setContent } = useNotetaking()
+    const { onOpen: onOpenInputModal } = useInputModal()
+    const { onOpen: onOpenAboutModal } = useAboutModal()
+
     const router = useRouter()
 
     // save content handler
@@ -41,6 +46,8 @@ const Toolbar = () => {
         console.log(id)
         if(id === "save-tool") handleContentSave()
         else if(id === "clear-tool") handleContentClear()
+        else if(id === "open-tool") onOpenInputModal()
+        else if(id === "about-tool") onOpenAboutModal()
     }
 
     // current words and chars values
