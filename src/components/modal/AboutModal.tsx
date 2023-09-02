@@ -14,7 +14,7 @@ const AboutModal = () => {
     return (
         <Modal title="Intriguing Insights: Discover More About Our Craft" onClose={onClose}>
             <div className="box-border flex flex-col justify-between items-start h-full w-full">
-                <div className="box-border flex flex-col gap-4 justify-start items-start h-[90%] w-full overflow-hidden overflow-y-auto">
+                <div className="box-border flex flex-col gap-4 justify-start items-start h-[85%] md:h-[90%] w-full overflow-hidden overflow-y-auto">
                     <h2 className="my-2 font-bold text-base">
                         CelestialScript: Crafting Elegance with Thorpad
                     </h2>
