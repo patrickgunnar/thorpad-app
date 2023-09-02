@@ -31,6 +31,14 @@ const InputModal = () => {
 
         if(!currentFile) return
 
+        // Check the file extension
+        const allowedExtensions = ['.txt'];
+        const fileExtension = currentFile.name.split('.').pop()?.toLowerCase()
+
+        if (!fileExtension || !allowedExtensions.includes(fileExtension)) {
+            return toast.error('We accept text files with the .txt extension only')
+        }
+
         const reader = new FileReader()
 
         reader.onload = (loadedEvent) => {
@@ -61,7 +69,6 @@ const InputModal = () => {
                     rounded-tools-radius border-[1px] border-black"
                         type="file" 
                         placeholder="Select your '.txt' file" 
-                        accept=".txt"
                         required
                         ref={inputRef}
                     />
