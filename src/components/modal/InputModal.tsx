@@ -32,7 +32,7 @@ const InputModal = () => {
         if(!currentFile) return
 
         // Check the file extension
-        const allowedExtensions = ['.txt'];
+        const allowedExtensions = ['txt'];
         const fileExtension = currentFile.name.split('.').pop()?.toLowerCase()
 
         if (!fileExtension || !allowedExtensions.includes(fileExtension)) {
