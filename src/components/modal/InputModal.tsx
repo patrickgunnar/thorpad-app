@@ -11,7 +11,7 @@ const InputModal = () => {
     if(!open) return null
 
     return (
-        <Modal onClose={onClose}>
+        <Modal title="Input Modal" onClose={onClose}>
             Input modal
         </Modal>
     );

@@ -11,7 +11,7 @@ const AboutModal = () => {
     if(!open) return null
 
     return (
-        <Modal onClose={onClose}>
+        <Modal title="About Modal" onClose={onClose}>
             About modal
         </Modal>
     );
