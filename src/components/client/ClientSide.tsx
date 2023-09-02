@@ -7,6 +7,7 @@ import useNotetaking from "@/hooks/useNotetaking";
 import InputModal from "../modal/InputModal";
 import AboutModal from "../modal/AboutModal";
 import { Toaster } from "react-hot-toast";
+import Loader from "../loading/Loader";
 
 
 const ClientSide = () => {
@@ -20,7 +21,7 @@ const ClientSide = () => {
         setIsClientSide(true);
     }, [setContent]);
 
-    if(!isClientSide) return <div>Loading...</div>
+    if(!isClientSide) return <Loader />
 
     return (
         <main className="flex flex-col justify-start items-center box-border h-full w-full">
