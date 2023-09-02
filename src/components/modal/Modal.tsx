@@ -22,7 +22,7 @@ const Modal: React.FC<ModalProps> = ({ title, children, onClose }) => {
                             {title}
                         </label>
                         <button className="box-border flex justify-center items-center p-2 h-9 aspect-square
-                        rounded-tools-radius hover:bg-[var(--colour--005)] hover:text-white" onClick={onClose}>
+                        rounded-tools-radius hover:bg-background-toolbar hover:text-white" onClick={onClose}>
                             <RiCloseCircleFill className="h-[70%] w-fit" />
                         </button>
                     </div>
