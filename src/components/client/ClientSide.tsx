@@ -8,6 +8,7 @@ import InputModal from "../modal/InputModal";
 import AboutModal from "../modal/AboutModal";
 import { Toaster } from "react-hot-toast";
 import Loader from "../loading/Loader";
+import Startup from "../startup/Startup";
 
 
 const ClientSide = () => {
@@ -15,6 +16,8 @@ const ClientSide = () => {
     const { setContent } = useNotetaking()
     // check if is the client side
     const [isClientSide, setIsClientSide] = useState<boolean>(false);
+    // startup msg
+    const [isStartup, setIsStartup] = useState<boolean>(true)
 
     useEffect(() => {
         setContent(localStorage.getItem('thorpadData') ?? '')
@@ -23,6 +26,9 @@ const ClientSide = () => {
 
     if(!isClientSide) return <Loader />
 
+    // startup handler
+    const handleStartup = () => setIsStartup(false)
+
     return (
         <main className="flex flex-col justify-start items-center box-border h-full w-full">
             <Toolbar />
@@ -30,6 +36,9 @@ const ClientSide = () => {
             <InputModal />
             <AboutModal />
             <Toaster />
+            {
+                isStartup && <Startup onClose={handleStartup} />
+            }
         </main>
     );
 }
