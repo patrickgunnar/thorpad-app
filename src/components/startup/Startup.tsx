@@ -26,7 +26,8 @@ const Startup: React.FC<StartupProps> = ({ onClose }) => {
                             I want to make it clear that the stuff you create in the app
                             might not stick around forever since it&apos;s saved in
                             localStorage. To be sure your work lasts, I recommend
-                            downloading it. This way, you can be sure your creations are
+                            downloading it by clicking on the SAVE button. This way, 
+                            you can be sure your creations are
                             safe, considering how unpredictable the digital world can
                             be.
                         </p>
