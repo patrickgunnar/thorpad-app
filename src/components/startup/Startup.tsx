@@ -3,6 +3,7 @@
 import { GiThorHammer } from "react-icons/gi";
 import Modal from "../modal/Modal";
 
+
 interface StartupProps {
     onClose: () => void;
 }
@@ -21,7 +22,7 @@ const Startup: React.FC<StartupProps> = ({ onClose }) => {
                             Thorpad
                         </span>
                     </div>
-                    <div  className="box-border flex justify-center items-start h-fit w-full">
+                    <div className="box-border flex justify-center items-start h-fit w-full">
                         <p className="box-border flex h-fit w-full text-lg font-normal">
                             I want to make it clear that the stuff you create in the app
                             might not stick around forever since it&apos;s saved in
@@ -32,8 +33,8 @@ const Startup: React.FC<StartupProps> = ({ onClose }) => {
                             be.
                         </p>
                     </div>
-                    <div  className="box-border flex justify-center items-center mt-10 mb-14 h-20 w-full">
-                        <label className="uppercase font-bold text-[16px]">
+                    <div className="box-border flex justify-center items-center mt-10 mb-14 h-20 w-full">
+                        <label className="uppercase font-bold text-center text-[16px]">
                             Thank You for Choosing Thorpad: Your Support Means the World!
                         </label>
                     </div>
