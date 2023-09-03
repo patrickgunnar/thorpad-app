@@ -21,7 +21,7 @@ const Startup: React.FC<StartupProps> = ({ onClose }) => {
                     </span>
                 </div>
                 <div  className="box-border flex justify-center items-center h-20 w-full">
-                    <p className="box-border flex h-fit w-full text-lg font-bold">
+                    <p className="box-border flex h-fit w-full text-lg font-normal">
                         I want to make it clear that the stuff you create in the app
                         might not stick around forever since it&apos;s saved in
                         localStorage. To be sure your work lasts, I recommend
